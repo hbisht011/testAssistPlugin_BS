@@ -1,171 +1,269 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.browserstack</groupId>
-    <artifactId>testng-browserstack</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+       xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <name>testng-browserstack</name>
-    <url>https://www.github.com/browserstack/testng-browserstack</url>
+       <modelVersion>4.0.0</modelVersion>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <surefire.version>2.19.1</surefire.version>
+       <groupId>com.philipslifeline.com</groupId>
 
-        <test.file></test.file>
-        <config.file>default</config.file>
-    </properties>
+       <artifactId>TestingLifelineWebSelenium</artifactId>
 
-    <repositories>
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-    </repositories>
+       <version>0.0.1</version>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </pluginRepository>
-    </pluginRepositories>
+ 
 
-    <dependencies>
-    <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>6.9.10</version>
-    </dependency>
-    <dependency>
-        <groupId>commons-io</groupId>
-        <artifactId>commons-io</artifactId>
-        <version>1.3.2</version>
-    </dependency>
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>2.52.0</version>
-    </dependency>
-    <dependency>
-        <groupId>com.browserstack</groupId>
-        <artifactId>browserstack-local-java</artifactId>
-        <version>0.1.0</version>
-    </dependency>
-    <dependency>
-        <groupId>com.googlecode.json-simple</groupId>
-        <artifactId>json-simple</artifactId>
-        <version>1.1.1</version>
-    </dependency>
-        <dependency>
-            <groupId>com.browserstack</groupId>
-            <artifactId>automate-testassist</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+       <dependencies>
 
-    </dependencies>
+              <dependency>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.12.4</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.18.1</version>
-            </plugin>
-            <plugin>
-                <groupId>com.browserstack</groupId>
-                <artifactId>automate-maven-plugin</artifactId>
-                <version>1.0.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <complianceLevel>1.8</complianceLevel>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>test-compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+                     <groupId>org.seleniumhq.selenium</groupId>
 
-    <profiles>
-        <profile>
-            <id>single</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>config/single.testng.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+                     <artifactId>selenium-java</artifactId>
 
-        <profile>
-            <id>local</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>config/local.testng.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+                     <version>3.141.59</version>
 
-        <profile>
-            <id>parallel</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>config/parallel.testng.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+              </dependency>
 
-        <profile>
-            <id>suite</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>config/suite.testng.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+ 
+
+              <dependency>
+
+                     <groupId>org.seleniumhq.selenium</groupId>
+
+                     <artifactId>htmlunit-driver</artifactId>
+
+                     <version>2.31.0</version>
+
+              </dependency>
+
+ 
+
+              <dependency>
+
+                     <groupId>org.apache.poi</groupId>
+
+                     <artifactId>poi</artifactId>
+
+                     <version>3.17</version>
+
+              </dependency>
+
+ 
+
+              <dependency>
+
+                     <groupId>org.apache.poi</groupId>
+
+                     <artifactId>poi-ooxml</artifactId>
+
+                     <version>3.17</version>
+
+              </dependency>
+
+ 
+
+              <dependency>
+
+                     <groupId>org.testng</groupId>
+
+                     <artifactId>testng</artifactId>
+
+                     <version>6.9.10</version>
+
+                     <scope>test</scope>
+
+              </dependency>
+
+ 
+
+              <dependency>
+
+                     <groupId>org.apache.directory.studio</groupId>
+
+                     <artifactId>org.apache.commons.io</artifactId>
+
+                     <version>2.4</version>
+
+              </dependency>
+
+ 
+
+              <dependency>
+
+                     <groupId>com.aventstack</groupId>
+
+                     <artifactId>extentreports</artifactId>
+
+                     <version>3.1.5</version>
+
+              </dependency>
+
+ 
+
+              <dependency>
+
+                     <groupId>com.browserstack</groupId>
+
+                     <artifactId>automate-testassist</artifactId>
+
+                     <version>1.0.0</version>
+
+              </dependency>
+
+ 
+
+       </dependencies>
+
+ 
+
+       <repositories>
+
+              <repository>
+
+                     <id>sonatype-nexus</id>
+
+                     <url>https://oss.sonatype.org/content/repositories</url>
+
+              </repository>
+
+       </repositories>
+
+ 
+
+       <pluginRepositories>
+
+              <pluginRepository>
+
+                     <id>sonatype-nexus</id>
+
+                     <url>https://oss.sonatype.org/content/repositories</url>
+
+              </pluginRepository>
+
+       </pluginRepositories>
+
+ 
+
+       <build>
+
+              <plugins>
+
+                     <plugin>
+
+                           <groupId>org.apache.maven.plugins</groupId>
+
+                           <artifactId>maven-compiler-plugin</artifactId>
+
+                           <version>3.0</version>
+
+                           <configuration>
+
+                                  <compilerVersion>1.8</compilerVersion>
+
+                                  <source>1.8</source>
+
+                                  <target>1.8</target>
+
+                           </configuration>
+
+                     </plugin>
+
+                     <plugin>
+
+                           <groupId>org.apache.maven.plugins</groupId>
+
+                           <artifactId>maven-surefire-plugin</artifactId>
+
+                           <version>2.17</version>
+
+                           <configuration>
+
+                                  <!-- <systemPropertyVariables>
+
+                                         <appUrl>${appUrl}</appUrl>
+
+                                  </systemPropertyVariables> -->
+
+                                  <suiteXmlFiles>
+
+                                         <!-- <suiteXmlFile>testng.xml</suiteXmlFile> -->
+
+                                         <suiteXmlFile>BS_Testng.xml</suiteXmlFile>
+
+                                  </suiteXmlFiles>
+
+                           </configuration>
+
+                     </plugin>
+
+                     <plugin>
+
+                           <!-- <groupId>org.eclipse.m2e</groupId>
+
+                           <artifactId>lifecycle-mapping</artifactId>
+
+                           <version>1.0.0</version>
+
+                           <configuration>
+
+                                  <lifecycleMappingMetadata>
+
+                                         <pluginExecutions>
+
+                                                <pluginExecution>
+
+                                                       <pluginExecutionFilter> -->
+
+                                                              <groupId>com.browserstack</groupId>
+
+                                                              <artifactId>automate-maven-plugin</artifactId>
+
+                                                              <version>1.0.0</version>
+
+                                                              <configuration>
+
+                                                                     <source>1.8</source>
+
+                                                                     <target>1.8</target>
+
+                                                                     <complianceLevel>1.8</complianceLevel>
+
+                                                              </configuration>
+
+                                                              <executions>
+
+                                                                     <!-- <execution>
+
+                                                                           <goals>
+
+                                                                                  <goal>test-compile</goal>
+
+                                                                           </goals>
+
+                                                                     </execution> -->
+
+                                                              </executions>
+
+                                                       <!-- </pluginExecutionFilter>
+
+                                                       <action>
+
+                                                              <ignore />
+
+                                                       </action>
+
+                                                </pluginExecution>
+
+                                         </pluginExecutions>
+
+                                  </lifecycleMappingMetadata>
+
+                           </configuration> -->
+
+                     </plugin>
+
+              </plugins>
+
+       </build>
 
 </project>
